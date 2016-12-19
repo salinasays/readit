@@ -2,10 +2,15 @@
 
  module.exports = function(sequelize, DataTypes){
  	var Vote = sequelize.define("Vote", {
- 		vote: {
+ 		voteUp: {
+ 			type: DataTypes.INTEGER,
+ 			default: 0
+ 		},
+    voteDown: {
  			type: DataTypes.INTEGER,
  			default: 0
  		}
+
  	}, {
  		classMethods: {
  			associate: function(models){
