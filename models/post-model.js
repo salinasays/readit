@@ -15,7 +15,7 @@ module.exports = function(sequelize, DataTypes) {
       associate: function(models) {
 
         Post.belongsToMany(models.Comment, { through: 'Post_Comment' });
-        Post.belongsToMany(models.Vote, { though: 'Post_Vote' });
+        Post.belongsToMany(models.Vote, { through: 'Post_Vote' });
 
       }
     }
