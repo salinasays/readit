@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Router, Route, IndexRoute, Link, browserHistory} from 'react-router';
-import CreatePost from './CreatePost';
-import Home from './Home';
-import './App.css';
+import CreatePost from './components/CreatePost';
+import Home from './components/Home';
+import '../App.css';
 
 var App = React.createClass({
 	render: function(){
@@ -13,8 +13,8 @@ var App = React.createClass({
 				<nav className="navbar navbar-inverse">
 					<div className="container-fluid">
 						<div className="nav navbar-nav">
-							<Link to='/'>Home</Link> 
-							<Link to='CreatePost'>Create Post</Link> 
+							<Link to='/'>Home</Link>
+							<Link to='CreatePost'>Create Post</Link>
 						</div>
 					</div>
 				</nav>

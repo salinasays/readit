@@ -12,6 +12,13 @@ const getPosts = (req, res) => {
     })
 }
 
+const getOnePost = (req, res) => {
+  Post.findById(req.params.id)
+    .then((post) => {
+      res.send(post)
+    })
+}
+
 const createPost = (req, res) => {
   //format of post should be {title, body}
   Post.create(req.body)
@@ -61,6 +68,7 @@ router.route('/posts')
   .post(createPost)
 
 router.route('/posts/:id')
+  .get(getOnePost)
   .delete(deletePost)
 
 router.route('/posts/:id/comments')
