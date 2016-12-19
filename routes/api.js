@@ -4,11 +4,17 @@ const Post = db.Post;
 const Comment = db.Comment;
 const Vote = db.Vote;
 
-
 const getPosts = (req, res) => {
   Post.findAll()
     .then((posts) => {
       res.send(posts)
+    })
+}
+
+const getOnePost = (req, res) => {
+  Post.findById(req.params.id)
+    .then((post) => {
+      res.send(post)
     })
 }
 
@@ -37,7 +43,7 @@ const getComments = (req, res) => {
 const createComment = (req, res) => {
   //format of post should be {comment}
 
-  let newComment = {
+  var newComment = {
     comment: req.body.comment,
     PostId: req.params.id
   }
@@ -61,6 +67,7 @@ router.route('/posts')
   .post(createPost)
 
 router.route('/posts/:id')
+  .get(getOnePost)
   .delete(deletePost)
 
 router.route('/posts/:id/comments')
