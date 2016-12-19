@@ -66,7 +66,13 @@
 	
 	__webpack_require__(237);
 	
+	var _SinglePost = __webpack_require__(242);
+	
+	var _SinglePost2 = _interopRequireDefault(_SinglePost);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var logo = __webpack_require__(241);
 	
 	var App = _react2.default.createClass({
 		displayName: 'App',
@@ -75,7 +81,7 @@
 			return _react2.default.createElement(
 				'div',
 				null,
-				_react2.default.createElement('img', { className: 'logo', src: __webpack_require__(236) }),
+				_react2.default.createElement('img', { className: 'logo', src: logo }),
 				_react2.default.createElement(
 					'nav',
 					{ className: 'navbar navbar-inverse' },
@@ -110,7 +116,8 @@
 			_reactRouter.Route,
 			{ path: '/', component: App },
 			_react2.default.createElement(_reactRouter.IndexRoute, { component: _Home2.default }),
-			_react2.default.createElement(_reactRouter.Route, { path: 'CreatePost', component: _CreatePost2.default })
+			_react2.default.createElement(_reactRouter.Route, { path: 'CreatePost', component: _CreatePost2.default }),
+			_react2.default.createElement(_reactRouter.Route, { path: '/post/:postId', component: _SinglePost2.default })
 		)
 	), document.getElementById('root'));
 
@@ -36757,7 +36764,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _Post = __webpack_require__(241);
+	var _Post = __webpack_require__(236);
 	
 	var _Post2 = _interopRequireDefault(_Post);
 	
@@ -36800,7 +36807,7 @@
 							'li',
 							{ key: idx },
 							' ',
-							_react2.default.createElement(_Post2.default, { title: val.title, body: val.body }),
+							_react2.default.createElement(_Post2.default, { title: val.title, body: val.body, id: val.id }),
 							' '
 						);
 					})
@@ -36815,7 +36822,47 @@
 /* 236 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "b82788fa63d52e4f7f2ca2ff2c0f9047.png";
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactRouter = __webpack_require__(178);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var Post = _react2.default.createClass({
+		displayName: 'Post',
+	
+	
+		render: function render() {
+			return _react2.default.createElement(
+				'div',
+				null,
+				_react2.default.createElement(
+					'h3',
+					null,
+					_react2.default.createElement(
+						_reactRouter.Link,
+						{ to: '/post/' + this.props.id },
+						this.props.title
+					)
+				),
+				_react2.default.createElement(
+					'p',
+					null,
+					this.props.body
+				)
+			);
+		}
+	});
+	
+	exports.default = Post;
 
 /***/ },
 /* 237 */
@@ -36852,7 +36899,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".label {\n\tfont-size: 25px;\n}\n\n.postTitle {\n\twidth: 80%;\n\theight: 30px;\n\tborder: 1px solid black;\n\tbackground-color: white;\n    font-size: 12px;\n    resize: none;\n}\n\n.textArea {\n\twidth: 80%;\n    height: 150px;\n    padding: 12px 20px;\n    box-sizing: border-box;\n    border: 1px solid black;\n    border-radius: 2px;\n    background-color: white;\n    font-size: 12px;\n    resize: none;\n\n}\n\n.submitButton {\n\tbackground-color: #990000;\n\tborder: none;\n\tcolor: white;\n\tpadding: 12px 32px;\n\tmargin: 4px 2px;\n\tcursor: pointer;\n}\n", ""]);
+	exports.push([module.id, "a {\n\ttext-decoration: none;\n\tfont-size: 17px;\n\tpadding-left: 25px;\n\tmargin-top: 50px;\n}\n\n.logo {\n\tmargin-left: 20px;\n}\n\n.label {\n\tfont-size: 16px;\n}\n\n.postTitle {\n\twidth: 80%;\n\theight: 30px;\n\tborder: 1px solid black;\n\tbackground-color: white;\n    font-size: 12px;\n    resize: none;\n}\n\n.textArea {\n\twidth: 80%;\n    height: 150px;\n    padding: 12px 20px;\n    box-sizing: border-box;\n    border: 1px solid black;\n    border-radius: 2px;\n    background-color: white;\n    font-size: 12px;\n    resize: none;\n\n}\n\n.submitButton {\n\tbackground-color: #990000;\n\tborder: none;\n\tcolor: white;\n\tpadding: 12px 32px;\n\tmargin: 4px 2px;\n\tcursor: pointer;\n}\n", ""]);
 	
 	// exports
 
@@ -37169,6 +37216,12 @@
 /* 241 */
 /***/ function(module, exports, __webpack_require__) {
 
+	module.exports = __webpack_require__.p + "b82788fa63d52e4f7f2ca2ff2c0f9047.png";
+
+/***/ },
+/* 242 */
+/***/ function(module, exports, __webpack_require__) {
+
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
@@ -37179,31 +37232,40 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
+	var _Post = __webpack_require__(236);
+	
+	var _Post2 = _interopRequireDefault(_Post);
+	
+	var _jquery = __webpack_require__(234);
+	
+	var _jquery2 = _interopRequireDefault(_jquery);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var Post = _react2.default.createClass({
-		displayName: 'Post',
+	var SinglePost = _react2.default.createClass({
+		displayName: 'SinglePost',
 	
+		getInitialState: function getInitialState() {
+			return { post: [] };
+		},
+		componentDidMount: function componentDidMount() {
+			var _this = this;
 	
+			_jquery2.default.ajax({
+				url: '/api/posts/' + this.props.params.postId,
+				type: 'GET'
+			}).done(function (data) {
+				console.log(data);
+				_this.setState({ post: data });
+			});
+		},
 		render: function render() {
-			return _react2.default.createElement(
-				'div',
-				null,
-				_react2.default.createElement(
-					'h3',
-					null,
-					this.props.title
-				),
-				_react2.default.createElement(
-					'p',
-					null,
-					this.props.body
-				)
-			);
+			console.log(this.state.post);
+			return _react2.default.createElement('div', null);
 		}
 	});
 	
-	exports.default = Post;
+	exports.default = SinglePost;
 
 /***/ }
 /******/ ]);

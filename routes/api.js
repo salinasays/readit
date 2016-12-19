@@ -12,6 +12,7 @@ const getPosts = (req, res) => {
 }
 
 const getOnePost = (req, res) => {
+  console.log(req.params.id)
   Post.findById(req.params.id)
     .then((post) => {
       res.send(post)

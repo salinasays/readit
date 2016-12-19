@@ -22,7 +22,7 @@ var Home = React.createClass({
 
 				<ol>
 					{this.state.allPosts.length === 0 ? null : this.state.allPosts.map((val, idx) => {
-						return <li key={idx}> <Post title={val.title} body={val.body}/> </li>
+						return <li key={idx}> <Post title={val.title} body={val.body} id={val.id}/> </li>
 					})}
 				</ol>
 			</div>
