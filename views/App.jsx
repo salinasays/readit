@@ -3,13 +3,14 @@ import ReactDOM from 'react-dom';
 import {Router, Route, IndexRoute, Link, browserHistory} from 'react-router';
 import CreatePost from './components/CreatePost';
 import Home from './components/Home';
-import '../App.css';
+import './App.css';
 
 var App = React.createClass({
 	render: function(){
 		return(
 			<div>
-			<h1>READIT</h1>
+			<img className="logo" src = {require('../imgs/logo.png')} />
+
 				<nav className="navbar navbar-inverse">
 					<div className="container-fluid">
 						<div className="nav navbar-nav">

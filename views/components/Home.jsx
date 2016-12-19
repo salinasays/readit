@@ -1,5 +1,5 @@
 import React from 'react';
-import Post from './components/Post.jsx';
+import Post from './Post.jsx';
 import $ from 'jquery';
 
 var Home = React.createClass({

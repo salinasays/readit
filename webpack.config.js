@@ -1,5 +1,4 @@
 const path = require("path");
-const LiveReloadPlugin = require('webpack-livereload-plugin');
 
 module.exports = {
   context: __dirname,
@@ -21,14 +20,15 @@ module.exports = {
       {
         test: /\.css$/,
         loader: 'style-loader!css-loader'
+      },
+      {
+        test: /\.(ico|jpg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
+        loader: 'file'
       }
     ]
   },
   devtool: 'source-maps',
   resolve: {
     extensions: ["", ".js", ".jsx"]
-  },
-    plugins: [
-    new LiveReloadPlugin()
-  ]
+  }
 };

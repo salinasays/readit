@@ -4,7 +4,6 @@ const Post = db.Post;
 const Comment = db.Comment;
 const Vote = db.Vote;
 
-
 const getPosts = (req, res) => {
   Post.findAll()
     .then((posts) => {
@@ -44,7 +43,7 @@ const getComments = (req, res) => {
 const createComment = (req, res) => {
   //format of post should be {comment}
 
-  let newComment = {
+  var newComment = {
     comment: req.body.comment,
     PostId: req.params.id
   }

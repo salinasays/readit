@@ -75,11 +75,7 @@
 			return _react2.default.createElement(
 				'div',
 				null,
-				_react2.default.createElement(
-					'h1',
-					null,
-					'READIT'
-				),
+				_react2.default.createElement('img', { className: 'logo', src: __webpack_require__(236) }),
 				_react2.default.createElement(
 					'nav',
 					{ className: 'navbar navbar-inverse' },
@@ -36761,7 +36757,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _Post = __webpack_require__(236);
+	var _Post = __webpack_require__(241);
 	
 	var _Post2 = _interopRequireDefault(_Post);
 	
@@ -36819,41 +36815,7 @@
 /* 236 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var Post = _react2.default.createClass({
-		displayName: 'Post',
-	
-	
-		render: function render() {
-			return _react2.default.createElement(
-				'div',
-				null,
-				_react2.default.createElement(
-					'h3',
-					null,
-					this.props.title
-				),
-				_react2.default.createElement(
-					'p',
-					null,
-					this.props.body
-				)
-			);
-		}
-	});
-	
-	exports.default = Post;
+	module.exports = __webpack_require__.p + "b82788fa63d52e4f7f2ca2ff2c0f9047.png";
 
 /***/ },
 /* 237 */
@@ -37202,6 +37164,46 @@
 			URL.revokeObjectURL(oldSrc);
 	}
 
+
+/***/ },
+/* 241 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var Post = _react2.default.createClass({
+		displayName: 'Post',
+	
+	
+		render: function render() {
+			return _react2.default.createElement(
+				'div',
+				null,
+				_react2.default.createElement(
+					'h3',
+					null,
+					this.props.title
+				),
+				_react2.default.createElement(
+					'p',
+					null,
+					this.props.body
+				)
+			);
+		}
+	});
+	
+	exports.default = Post;
 
 /***/ }
 /******/ ]);
