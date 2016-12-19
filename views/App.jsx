@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import {Router, Route, IndexRoute, Link, browserHistory} from 'react-router';
 import CreatePost from './CreatePost';
 import Home from './Home';
+import './App.css';
 
 var App = React.createClass({
 	render: function(){

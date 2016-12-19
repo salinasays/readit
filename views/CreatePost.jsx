@@ -27,27 +27,30 @@ var CreatePost = React.createClass({
 				<h2>Create A Post:</h2>
 
 				<form onSubmit={this.submitForm}>
-					<label>Title:</label> 
+					<label className="label">Title:</label> 
 
 					<br />
 
-					<input 
+					<input
+					className="postTitle" 
 					type="text" 
 					onChange={this.handleChange.bind(this, "title")}/> 
 
 					<br /> <br />
 
-					<label>Body:</label> 
+					<label className="label">Body:</label> 
 
 					<br />
 
-					<input 
+					<input
+					className="textArea" 
 					type="text"
 					onChange={this.handleChange.bind(this, "body")} /> 
 
 					<br /> <br />
 
-					<input 
+					<input
+					className="submitButton" 
 					type="submit" 
 					value="Submit" />
 				</form>
